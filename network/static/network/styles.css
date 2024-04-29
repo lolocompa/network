@@ -1,0 +1,114 @@
+body {
+    background-color: rgb(53, 53, 53);
+}
+
+
+.container_create {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+
+textarea {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.container_post {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 900px;
+    margin: 15px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.container_all_posts {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.form-control {
+    width: 800px;
+}
+
+.user_and_time {
+    display: flex;
+}
+
+#to_profile {
+    color: gray;
+    font-weight: bold;
+}
+
+.user_data {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    width: 700px;
+    height: 220px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+.page_load {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.heart_button {
+    border: none;
+    padding: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.heart_button:focus,
+.heart_button:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+#likes{
+    margin-top: 40px;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#like_count {
+    margin-top: 12px;
+}
+
+#heart_css {
+    color: red;
+}
+
+#post_content {
+    margin-top: 25px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    flex-grow: 1;
+    overflow: auto;
+}

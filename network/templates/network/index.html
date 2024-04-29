@@ -1,0 +1,41 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <div class="container_all_posts">
+        {% for post in all_posts %}
+            <div class="container_post">
+                <div class="user_and_time">
+                    <a id="to_profile" href="{% url "profile" post.user %}">{{ post.user }}</a>
+                    <p style="font-weight: lighter; margin-left: 20px; margin-right: 20px">{{ post.timestamp }}</p>
+                    {% if post.user == current_user  %}
+                       <a style="height: 30px"href="{% url "edit_post" post.id %}"><i class="bi bi-pencil-square"></i>
+                       </a> 
+                    {% endif %}
+                </div>
+                <p id="post_content">{{ post.content }}</p>
+                <div class="index">
+                    <div  id="likes">
+                        <button data-id="{{ post.id }}" class="heart_button"><i id="heart_css" class="bi bi-heart"></i></button>
+                        <p id="like_count">{{ post.likes }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %} 
+    </div>
+    <div class="page_load">
+        {% if all_posts %}
+            {% if page_num > 1 %}
+                <form action="{% url "index" %}" method="post">
+                    {% csrf_token %}
+                    <input class="btn btn-primary" type="submit" value="previous">
+                    <input type="hidden" name="p_or_n" value="previous">
+                </form>
+            {% endif %}
+            <form action="{% url "index" %}" method="post">
+                {% csrf_token %}
+                <input class="btn btn-primary" type="submit" value="next">
+                <input type="hidden" name="p_or_n" value="next">
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}
